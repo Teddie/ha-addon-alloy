@@ -40,7 +40,8 @@ loki.source.journal "journal" {
   forward_to   = [loki.process.journal.receiver]
   relabel_rules = loki.relabel.journal.rules
   labels       = {
-    job = "systemd-journal",
+    job   = "systemd-journal",
+    level = "info",
   }
 }
 
@@ -68,10 +69,6 @@ loki.relabel "journal" {
     source_labels = ["__journal_container_name"]
     target_label  = "container_name"
   }
-  rule {
-    source_labels = ["__journal_priority_keyword"]
-    target_label  = "level"
-  }
 }
 
 // --- Process journal logs ---
@@ -90,6 +87,12 @@ loki.process "journal" {
   // "2026-05-13 13:51:47.539ERRORts=... level=info msg=..."
   stage.regex {
     expression = "(^|[[:space:]])level=(?P<extracted_level>debug|info|notice|warning|warn|error|critical|fatal)([[:space:]]|$)"
+  }
+
+  // Extract service-prefixed levels from s6-style messages:
+  // "s6-rc: info: service init-alloy successfully started"
+  stage.regex {
+    expression = "^[^[:space:]]+: (?P<extracted_level>debug|info|notice|warning|warn|error|critical|fatal):"
   }
 
   stage.labels {

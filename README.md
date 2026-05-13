@@ -33,7 +33,7 @@ All systemd journal entries from HAOS, including:
 - Supervisor logs
 - Host system logs (kernel, networkd, etc.)
 
-Labels applied: `unit`, `hostname`, `syslog_identifier`, `transport`, `container_name`, `level`. For Home Assistant log lines, `level` is extracted from the message text; other journal entries use the journal priority.
+Labels applied: `unit`, `hostname`, `syslog_identifier`, `transport`, `container_name`, `level`. Logs default to `level="info"` and override it when a recognizable message-level value is present.
 
 ## Debug UI
 

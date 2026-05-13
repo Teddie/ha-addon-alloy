@@ -27,7 +27,7 @@ All journal entries are shipped to Loki with these labels:
 | `syslog_identifier` | process identifier |
 | `transport` | journal transport type |
 | `container_name` | Docker container name (for add-ons) |
-| `level` | Home Assistant message log level when present; otherwise journal priority |
+| `level` | Defaults to `info`; overridden when the message contains a recognizable log level |
 
 ## Debug UI
 

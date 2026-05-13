@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2 - 2026-05-13
+
+### Fixed
+- Default logs to `level="info"` instead of journal priority, then override when a recognizable message-level value is present
+- Extract levels from s6-style service messages such as `s6-rc: info: ...`
+
 ## 1.2.1 - 2026-05-13
 
 ### Fixed
