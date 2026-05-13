@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0 - 2026-05-13
+
+### Changed
+- Updated Grafana Alloy to v1.16.1
+
+## 1.1.0 - 2026-05-13
+
+### Changed
+- Updated Grafana Alloy to v1.14.1
+
+### Fixed
+- Extract Home Assistant log levels from message text so container stderr entries are not all labeled as `error`
+
 ## 1.0.0 - 2026-02-21
 
 ### Added
