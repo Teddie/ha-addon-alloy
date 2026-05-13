@@ -52,4 +52,4 @@ Note: This is injected as-is into the config file. Syntax errors will prevent Al
 
 ## Support
 
-Report issues at: https://github.com/ecohash-co/ha-addon-alloy/issues
+Report issues at: https://github.com/Teddie/ha-addon-alloy/issues
