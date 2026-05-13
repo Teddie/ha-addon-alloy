@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 - 2026-05-13
+
+### Fixed
+- Prefer embedded `level=` fields over the journal priority when labeling structured log lines
+
 ## 1.2.0 - 2026-05-13
 
 ### Changed
